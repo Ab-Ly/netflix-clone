@@ -34,24 +34,24 @@ function Nav() {
         <a href="/" className="nav__link">
           Films
         </a>
-        <div className="nav__action">
-          <a href="/" className="nav__action">
-            <SearchIcon />
-          </a>
-          <a href="/" className="nav__action">
-            Direct
-          </a>
-          <a href="/" className="nav__action">
-            <CardGiftcardIcon />
-          </a>
-          <a href="/" className="nav__action">
-            <NotificationsIcon />
-          </a>
-          <a href="/" className="nav__action">
-            <img src="./images/netflix-avatar.png" alt="" />
-          </a>
-        </div>
       </nav>
+      <div className="nav__actions">
+        <a href="/" className="nav__action">
+          <SearchIcon />
+        </a>
+        <a href="/" className="nav__action">
+          Direct
+        </a>
+        <a href="/" className="nav__action">
+          <CardGiftcardIcon />
+        </a>
+        <a href="/" className="nav__action">
+          <NotificationsIcon />
+        </a>
+        <a href="/" className="nav__action">
+          <img src="./images/netflix-avatar.png" alt="" />
+        </a>
+      </div>
     </div>
   );
 }
