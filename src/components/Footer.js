@@ -3,7 +3,7 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import YouTubeIcon from "@material-ui/icons/YouTube";
-
+// 9160d580117500fa7beec9f187bfb120
 import "./Footer.scss";
 function Footer() {
   return (
