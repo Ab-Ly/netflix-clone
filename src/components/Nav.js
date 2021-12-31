@@ -7,7 +7,10 @@ import CardGiftcardIcon from "@material-ui/icons/CardGiftcard";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 
 function Nav() {
-  const [navBlack, setNavBlack] = useState(false);
+  const [navBlack, setNavBlack] = useState(false); // 1 add event listner when scroll : default False
+  const [toggleMenu, setToggleMenu] = useState(false);
+
+  //1
   const transitionNav = () => {
     window.scrollY > 100 ? setNavBlack(true) : setNavBlack(false);
   };
@@ -15,12 +18,21 @@ function Nav() {
     document.addEventListener("scroll", transitionNav);
   });
 
+  //2
+  const handleClick = () => {
+    toggleMenu ? setToggleMenu(false) : setToggleMenu(true);
+  };
+
   console.log(navBlack);
   /* scroll */
   /* burger */
   return (
-    <div className={`nav  ${navBlack && "nav--black"}`}>
-      <button className="nav__burger">
+    <div
+      className={`nav  ${
+        navBlack || toggleMenu ? "nav--black" : "nav--transparent"
+      } ${toggleMenu && "show"}`}
+    >
+      <button className="nav__burger" onClick={handleClick}>
         <MenuIcon />
       </button>
       <img src="./images/logonetflix.png" className="nav__logo" alt="Netflix" />
