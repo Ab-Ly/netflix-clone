@@ -1,15 +1,16 @@
 import "./App.scss";
-import Footer from "./components/Footer";
+
 import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+import Banner from "./components/Banner";
+import Row from "./components/Row";
 
 function App() {
   return (
     <div className="App">
-      {/* navbar */}
       <Nav />
-      {/* banner */}
-      <div className="test"></div>
-      {/* rows */}
+      <Banner />
+      <Row />
       {/* video */}
       {/* quick view */}
 
