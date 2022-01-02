@@ -1,14 +1,21 @@
 import React from "react";
 import { useState, useEffect } from "react";
-
+import { Link } from "react-router-dom";
 import "./Banner.scss";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import InfoIcon from "@material-ui/icons/Info";
 import requests from "../config/Requests";
 import axios from "axios";
+import QuickView from "./QuickView";
 
 function Banner() {
   const [movie, setMovie] = useState([]);
+  const [popup, setPopup] = useState(false);
+
+  function handleClickPopup() {
+    popup ? setPopup(false) : setPopup(true);
+  }
+
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(requests.fetchTrending);
@@ -46,16 +53,24 @@ function Banner() {
           {truncateText(movie?.overview, 100)}
         </p>
         <div className="banner__buttons">
-          <button className="banner__button banner__button--play">
-            <PlayArrowIcon />
-            Play
-          </button>
-          <button className="banner__button">
+          <Link to={`/video/${movie?.id}`}>
+            <button className="banner__button banner__button--play">
+              <PlayArrowIcon />
+              Play
+            </button>
+          </Link>
+          <button className="banner__button" onClick={handleClickPopup}>
             <InfoIcon />
             Plus d'infos
           </button>
         </div>
       </div>
+      <QuickView
+        bannerStyle={bannerStyle}
+        movie={movie}
+        popup={handleClickPopup}
+        popupStatut={popup}
+      />
     </header>
   );
 }
